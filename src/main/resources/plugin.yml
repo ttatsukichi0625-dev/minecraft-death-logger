@@ -1,0 +1,6 @@
+name: DeathLogger
+main: com.example.minecraftdeathlogger.DeathLogger
+version: 1.0
+api-version: 1.16
+description: A plugin that logs player deaths and sends to Discord
+author: tatsukichi
