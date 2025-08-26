@@ -9,10 +9,19 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class DeathLogger extends JavaPlugin implements Listener {
 
     @Override
-    public void onEnable() {
-        Bukkit.getPluginManager().registerEvents(this, this);
-        getLogger().info("DeathLogger enabled!");
-    }
+public void onEnable() {
+    // config.yml を自動生成（resources/config.yml があればコピーされる）
+    saveDefaultConfig();
+
+    // messages.yml を自動生成（resources/messages.yml があればコピーされる）
+    saveResource("messages.yml", false);
+
+    // イベント登録
+    Bukkit.getPluginManager().registerEvents(this, this);
+
+    getLogger().info("DeathLogger enabled!");
+}
+
 
     @Override
     public void onDisable() {
